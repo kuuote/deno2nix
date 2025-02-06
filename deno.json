@@ -1,0 +1,12 @@
+{
+  "imports": {
+    "@core/unknownutil": "jsr:@core/unknownutil@^4.3.0",
+    "@std/assert": "jsr:@std/assert@^1.0.11",
+    "@std/fs": "jsr:@std/fs@^1.0.11"
+  },
+  "tasks": {
+    "update-deps": "deno run --allow-read --allow-write --allow-run task/update.ts ; deno cache src/**/*.ts",
+    "update-gen": "deno task update-stub ; deno run -A src/main.ts deno.lock > deno.nix",
+    "update-stub": "deno run --allow-read --allow-write task/update-stub.ts ; deno fmt -q src/stub.ts"
+  }
+}
