@@ -18,9 +18,7 @@
           packages = [ pkgs.deno ];
         };
       });
-      packages = forAllSystems (pkgs: {
-        default = import ./. { inherit pkgs; };
-      });
+      packages = forAllSystems (pkgs: import ./. { inherit pkgs; });
     };
 
   inputs = {
