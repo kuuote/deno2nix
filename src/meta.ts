@@ -17,6 +17,7 @@ export async function fetchMetaJson(
 ): Promise<MetaInfo> {
   const { name, version } = pkgspec;
   const metaJsonPath = `${name}/${version}_meta.json`;
+  const cacheDir = `${cacheRoot}/jsr/meta/${name}`;
   const cachePath = `${cacheRoot}/jsr/meta/${metaJsonPath}`;
   const url = `https://jsr.io/${metaJsonPath}`;
   try {
@@ -36,7 +37,7 @@ export async function fetchMetaJson(
     .then((r) => r.bytes());
   const meta = JSON.parse(new TextDecoder().decode(data)) as Meta;
   try {
-    await Deno.mkdir(`${cacheRoot}/meta/${name}`, { recursive: true });
+    await Deno.mkdir(cacheDir, { recursive: true });
     await Deno.writeFile(cachePath, data);
   } catch {
     console.error(`cache write failed: ${cachePath}`);
