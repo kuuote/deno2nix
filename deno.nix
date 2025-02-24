@@ -216,20 +216,23 @@ build {
         "/unstable-chmod"
         "/unstable-link"
         "/unstable-lstat"
+        "/unstable-make-temp-dir"
         "/unstable-read-dir"
+        "/unstable-read-file"
         "/unstable-read-link"
         "/unstable-real-path"
+        "/unstable-rename"
         "/unstable-stat"
         "/unstable-symlink"
         "/unstable-types"
         "/walk"
       ];
       "hash" = {
-        "meta" = "ba674672693340c5ebdd018b4fe1af46cb08741f42b4c538154e97d217b55bdd";
-        "src" = "sha256-GmGW4/pJDh0SvtdAo41UHQFjMi+GEoN73v/EbBMkhTg=";
+        "meta" = "756d3ff0ade91c9e72b228e8012b6ff00c3d4a4ac9c642c4dac083536bf6c605";
+        "src" = "sha256-T3NAwy65gG7qqqbiLqigUmyav7BoYGa06sQE9EslR7M=";
       };
       "name" = "@std/fs";
-      "version" = "1.0.11";
+      "version" = "1.0.13";
     }
     {
       "exports" = [
